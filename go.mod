@@ -1,4 +1,4 @@
-module github.com/andreaspeters/docker-volume-rbd
+module github.com/AVENTER-UG/docker-volume-rbd
 
 go 1.17
 

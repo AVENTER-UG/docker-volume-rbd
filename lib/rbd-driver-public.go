@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/andreaspeters/docker-volume-rbd/lib/try"
+	"github.com/AVENTER-UG/docker-volume-rbd/lib/try"
 	"github.com/ceph/go-ceph/rados"
 	"github.com/ceph/go-ceph/rbd"
 	"github.com/sirupsen/logrus"

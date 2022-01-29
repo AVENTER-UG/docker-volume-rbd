@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	dockerVolumeRbd "github.com/andreaspeters/docker-volume-rbd/lib"
+	dockerVolumeRbd "github.com/AVENTER-UG/docker-volume-rbd/lib"
 	"github.com/docker/go-plugins-helpers/volume"
 	"github.com/sirupsen/logrus"
 )
