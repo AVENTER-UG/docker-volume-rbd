@@ -22,24 +22,12 @@ This plugins is managed using Docker Engine plugin system.
 ```conf
 LOG_LEVEL=[0:ErrorLevel; 1:WarnLevel; 2:InfoLevel; 3:DebugLevel] defaults to 0
 
-RBD_CONF_DEVICE_MAP_ROOT="/dev/rbd"
 RBD_CONF_POOL="ssd"
 RBD_CONF_CLUSTER=ceph
 RBD_CONF_KEYRING_USER=client.admin
 
 Mount options defaults to "--options=noatime" (extended syntax with no spaces)
 MOUNT_OPTIONS="--options=noatime"
-```
-
-### 2 - Install the plugin
-
-```bash
-docker plugin install AVENTER-UG/rbd \
-  --alias=AVENTER-UG/rbd \
-  LOG_LEVEL=1 \
-  RBD_CONF_POOL="ssd" \
-  RBD_CONF_CLUSTER=ceph \
-  RBD_CONF_KEYRING_USER=client.admin
 ```
 
 ### 3 - Create and use a volume
@@ -59,122 +47,26 @@ order: optional, defaults to 22 (4KB Objects)
 [https://docs.docker.com/engine/reference/commandline/volume_create/](https://docs.docker.com/engine/reference/commandline/volume_create/)
 
 ```sh
-docker volume create -d AVENTER-UG/rbd -o size=206 my_rbd_volume
+docker volume create -d rbd -o size=206 my_rbd_volume
 
 docker volume ls
 DRIVER              VOLUME NAME
 local               069d59c79366294d07b9102dde97807aeaae49dc26bb9b79dd5b983f7041d069
 local               11db1fa5ba70752101be90a80ee48f0282a22a3c8020c1042219ed1ed5cb0557
 local               2d1f2a8fac147b7e7a6b95ca227eba2ff859325210c7280ccb73fd5beda6e67a
-AVENTER-UG/rbd          my_rbd_volume
+rbd                 my_rbd_volume
 ```
 
 #### 3.B - Run a container with a previously created volume:
 
 ```bash
-docker run -it -v my_rbd_volume:/data --volume-driver=AVENTER-UG/rbd busybox sh
+docker run -it -v my_rbd_volume:/data --volume-driver=rbd busybox sh
 ```
 
 #### 3.C - Run a container with an anonymous volume:
 
 ```bash
-docker run -it -v $(docker volume create -d AVENTER-UG/rbd -o size=206):/data --volume-driver=AVENTER-UG/rbd -o size=206 busybox sh
-```
-*NOTE: Docker 1.13.1 does not support volume opts on docker run or docker create*
-
-#### 3.D - Create a service with a previously created volume:
-
-```bash
- docker service create --replicas=1 \
-   --mount type=volume,source=my_rbd_volume,destination=/var/lib/mysql,volume-driver=AVENTER-UG/rbd \
-   mariadb:latest
-```
-
-#### 3.E - Create a service with an anonymous volume:
-
-```bash
- docker service create --replicas=1 \
-   -e MYSQL_ROOT_PASSWORD=my-secret-pw \
-   --mount type=volume,destination=/var/lib/mysql,volume-driver=AVENTER-UG/rbd,volume-opt=size=512 \
-   mariadb:latest
-```
-
-
-### 4 - Upgrading the plugin
-
-#### 4.1 Upgrade without tag versioning:
-
-
-```bash
-docker plugin disable -f AVENTER-UG/rbd
-docker plugin upgrade AVENTER-UG/rbd
-```
-
-Update setting [Optional]:
-```bash
-docker plugin set AVENTER-UG/rbd \
-  LOG_LEVEL=2 \
-  RBD_CONF_POOL="ssd" \
-  RBD_CONF_KEYRING_USER=client.admin
-```
-
-Enable the plugin:
-```bash
-docker plugin enable AVENTER-UG/rbd
-```
-
-
-
-## Known problems:
-
-1. **WHEN** docker plugin remove  + install **THEN** containers running in plugins node lost their volumes
-  **SOLUTION** restart node (swarm moves containers to another node + restart free up the Rbd mapped + mounted images)
-
-
-## Troubleshooting
-
-### Check your plugin is enabled:
-
-```bash
-docker plugin ls
-
-ID                  NAME                DESCRIPTION               ENABLED
-fff19fa9a622        AVENTER-UG/rbd:latest   RBD plugin for Docker     true
-```
-
-### Exec an interactive bash in plugins container:
-
-Find the full id:
-
-```bash
-docker-runc list | grep fff19fa9a622
-```
-
-Exec an interactive shell:
-
-```bash
-docker-runc exec -t fff19fa9a622885f5bcc30c0199046761825b037b25523540647b12ccf84403be bash
-```
-
-### Log your driver:
-
-If this container is not running or restarting, then check your docker engine log i.e.
-
-`tail -f /var/log/upstart/docker`
-
-or its equivalent
-
-`journalctl -f -u docker.service`
-
-
-### Use curl to debug plugin socket issues.
-
-To verify if the plugin API socket that the docker daemon communicates with is responsive, use curl. In this example, we will make API calls from the docker host to volume and network plugins using curl to ensure that the plugin is listening on the said socket. For a well functioning plugin, these basic requests should work. Note that plugin sockets are available on the host under /var/run/docker/plugins/<pluginID>
-
-```bash
-curl -H "Content-Type: application/json" -XPOST -d '{}' --unix-socket /var/run/docker/plugins/546ac5b9043ce0f49552b14e9fb73dc78f1028d2da7e894ab599e6546566c0df/rbd.sock http:/VolumeDriver.List
-
-{"Mountpoint":"","Err":"","Volumes":[{"Name":"rbd_test","Mountpoint":"","Status":null},{"Name":"demo_test","Mountpoint":"/mnt/volumes/demo_test","Status":null}],"Volume":null,"Capabilities":{"Scope":""}}
+docker run -it -v $(docker volume create -d rbd -o size=206):/data --volume-driver=rbd -o size=206 busybox sh
 ```
 
 ## Changelog
@@ -216,13 +108,6 @@ Incompatible backwards changes:
 - POST /VolumeDriver.Create gives err if volume exists.
 - POST /VolumeDriver.Mount gives err if volume has watchers.
 
-## Developing
-
-You can build and publish the plugin with:
-
-```bash
-make all
-```
 
 ### Vendor dependencies
 
