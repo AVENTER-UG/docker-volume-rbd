@@ -194,7 +194,7 @@ func (d *rbdDriver) Mount(r *volume.MountRequest) (*volume.MountResponse, error)
 		return &volume.MountResponse{}, fmt.Errorf("volume-rbd Name=%s Request=Mount Message= %s", r.Name, err)
 	}
 
-	return &volume.MountResponse{Mountpoint: mountpoint}, nil
+	return &volume.MountResponse{Mountpoint: mountpoint + d.conf["mountdir"]}, nil
 }
 
 func (d *rbdDriver) Unmount(r *volume.UnmountRequest) error {
