@@ -1,0 +1,12 @@
+[Unit]
+Description=AVENTER Docker Volume rbd
+After=docker.service
+
+[Service]
+EnvironmentFile=/etc/docker-volume/rbd.env
+ExecStart=/usr/bin/docker-volume-rbd
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
