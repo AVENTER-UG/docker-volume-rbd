@@ -6,7 +6,7 @@ require (
 	github.com/ceph/go-ceph v0.2.0
 	github.com/docker/go-plugins-helpers v0.0.0-20200102110956-c9a8a2d92ccc
 	github.com/sirupsen/logrus v1.4.2
-	golang.org/x/sys v0.0.0-20200302150141-5c8b2ff67527
+	golang.org/x/sys v0.0.0-20200501145240-bc7a7d42d5c3
 )
 
 require (
