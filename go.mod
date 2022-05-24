@@ -1,6 +1,6 @@
 module github.com/AVENTER-UG/docker-volume-rbd
 
-go 1.17
+go 1.16
 
 require (
 	github.com/ceph/go-ceph v0.2.0

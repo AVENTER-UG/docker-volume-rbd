@@ -31,7 +31,7 @@ help:
 
 build-bin:
 	@echo ">>>> Build binary"
-	@CGO_ENABLED=0 GOOS=linux go build -o build/$(PROJECTNAME) -a -installsuffix cgo -ldflags "-X main.BuildVersion=${BUILDDATE} -X main.GitVersion=${TAG} -extldflags \"-static\"" .
+	@GOOS=linux go build -tags pacific -o build/$(PROJECTNAME) -a -installsuffix cgo -ldflags "-X main.BuildVersion=${BUILDDATE} -X main.GitVersion=${TAG} " .
 
 deb: build-bin
 	@echo ">>>> Build DEB"
