@@ -29,11 +29,11 @@ help:
 
 .DEFAULT_GOAL := all
 
-build:
+build-bin:
 	@echo ">>>> Build binary"
 	@CGO_ENABLED=0 GOOS=linux go build -o build/$(PROJECTNAME) -a -installsuffix cgo -ldflags "-X main.BuildVersion=${BUILDDATE} -X main.GitVersion=${TAG} -extldflags \"-static\"" .
 
-deb: build
+deb: build-bin
 	@echo ">>>> Build DEB"
 	@mkdir -p /tmp/toor/usr/bin
 	@mkdir -p /tmp/toor/etc/docker-volume/
@@ -43,7 +43,7 @@ deb: build
 	@cp build/rbd.env /tmp/toor/etc/docker-volume/rbd.env
 	@fpm -t deb -C /tmp/toor/ --config-files etc $(FPM_OPTS) $(CONTENTS)
 
-rpm: build
+rpm: build-bin
 	@echo ">>>> Build RPM"
 	@mkdir -p /tmp/toor/usr/bin
 	@mkdir -p /tmp/toor/etc/docker-volume/
@@ -53,4 +53,4 @@ rpm: build
 	@cp build/rbd.env /tmp/toor/etc/docker-volume/rbd.env
 	@fpm -t rpm -C /tmp/toor/ --config-files etc $(FPM_OPTS) $(CONTENTS)
 
-all: build
+all: build-bin
