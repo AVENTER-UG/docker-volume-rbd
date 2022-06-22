@@ -1,0 +1,275 @@
+{
+ "artifacts": [
+  {
+   "id": "9757583b486fc055",
+   "name": "github.com/Microsoft/go-winio",
+   "version": "v0.4.14",
+   "type": "go-module",
+   "foundBy": "go-mod-file-cataloger",
+   "locations": [
+    {
+     "path": "go.mod"
+    }
+   ],
+   "licenses": [],
+   "language": "go",
+   "cpes": [
+    "cpe:2.3:a:Microsoft:go-winio:v0.4.14:*:*:*:*:*:*:*",
+    "cpe:2.3:a:Microsoft:go_winio:v0.4.14:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:golang/github.com/Microsoft/go-winio@v0.4.14"
+  },
+  {
+   "id": "924e1ddc4e2f5ca0",
+   "name": "github.com/ceph/go-ceph",
+   "version": "v0.2.0",
+   "type": "go-module",
+   "foundBy": "go-mod-file-cataloger",
+   "locations": [
+    {
+     "path": "go.mod"
+    }
+   ],
+   "licenses": [],
+   "language": "go",
+   "cpes": [
+    "cpe:2.3:a:ceph:go-ceph:v0.2.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:ceph:go_ceph:v0.2.0:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:golang/github.com/ceph/go-ceph@v0.2.0"
+  },
+  {
+   "id": "b12b15649fcea561",
+   "name": "github.com/coreos/go-systemd",
+   "version": "v0.0.0-20191104093116-d3cd4ed1dbcf",
+   "type": "go-module",
+   "foundBy": "go-mod-file-cataloger",
+   "locations": [
+    {
+     "path": "go.mod"
+    }
+   ],
+   "licenses": [],
+   "language": "go",
+   "cpes": [
+    "cpe:2.3:a:coreos:go-systemd:v0.0.0-20191104093116-d3cd4ed1dbcf:*:*:*:*:*:*:*",
+    "cpe:2.3:a:coreos:go_systemd:v0.0.0-20191104093116-d3cd4ed1dbcf:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:golang/github.com/coreos/go-systemd@v0.0.0-20191104093116-d3cd4ed1dbcf"
+  },
+  {
+   "id": "741cd7ac3f396969",
+   "name": "github.com/docker/go-connections",
+   "version": "v0.4.0",
+   "type": "go-module",
+   "foundBy": "go-mod-file-cataloger",
+   "locations": [
+    {
+     "path": "go.mod"
+    }
+   ],
+   "licenses": [],
+   "language": "go",
+   "cpes": [
+    "cpe:2.3:a:docker:go-connections:v0.4.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:docker:go_connections:v0.4.0:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:golang/github.com/docker/go-connections@v0.4.0"
+  },
+  {
+   "id": "91f01ded5c04adea",
+   "name": "github.com/docker/go-plugins-helpers",
+   "version": "v0.0.0-20200102110956-c9a8a2d92ccc",
+   "type": "go-module",
+   "foundBy": "go-mod-file-cataloger",
+   "locations": [
+    {
+     "path": "go.mod"
+    }
+   ],
+   "licenses": [],
+   "language": "go",
+   "cpes": [
+    "cpe:2.3:a:docker:go-plugins-helpers:v0.0.0-20200102110956-c9a8a2d92ccc:*:*:*:*:*:*:*",
+    "cpe:2.3:a:docker:go_plugins_helpers:v0.0.0-20200102110956-c9a8a2d92ccc:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:golang/github.com/docker/go-plugins-helpers@v0.0.0-20200102110956-c9a8a2d92ccc"
+  },
+  {
+   "id": "524bc28fb8fb5bf7",
+   "name": "github.com/konsorten/go-windows-terminal-sequences",
+   "version": "v1.0.2",
+   "type": "go-module",
+   "foundBy": "go-mod-file-cataloger",
+   "locations": [
+    {
+     "path": "go.mod"
+    }
+   ],
+   "licenses": [],
+   "language": "go",
+   "cpes": [
+    "cpe:2.3:a:konsorten:go-windows-terminal-sequences:v1.0.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:konsorten:go_windows_terminal_sequences:v1.0.2:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:golang/github.com/konsorten/go-windows-terminal-sequences@v1.0.2"
+  },
+  {
+   "id": "78115e0087177d15",
+   "name": "github.com/sirupsen/logrus",
+   "version": "v1.4.2",
+   "type": "go-module",
+   "foundBy": "go-mod-file-cataloger",
+   "locations": [
+    {
+     "path": "go.mod"
+    }
+   ],
+   "licenses": [],
+   "language": "go",
+   "cpes": [
+    "cpe:2.3:a:sirupsen:logrus:v1.4.2:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:golang/github.com/sirupsen/logrus@v1.4.2"
+  },
+  {
+   "id": "8070835ddf0a319e",
+   "name": "golang.org/x/net",
+   "version": "v0.0.0-20200301022130-244492dfa37a",
+   "type": "go-module",
+   "foundBy": "go-mod-file-cataloger",
+   "locations": [
+    {
+     "path": "go.mod"
+    }
+   ],
+   "licenses": [],
+   "language": "go",
+   "cpes": [
+    "cpe:2.3:a:golang:x\\/net:v0.0.0-20200301022130-244492dfa37a:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:golang/golang.org/x/net@v0.0.0-20200301022130-244492dfa37a"
+  },
+  {
+   "id": "e7e07f9188984eba",
+   "name": "golang.org/x/sys",
+   "version": "v0.0.0-20200501145240-bc7a7d42d5c3",
+   "type": "go-module",
+   "foundBy": "go-mod-file-cataloger",
+   "locations": [
+    {
+     "path": "go.mod"
+    }
+   ],
+   "licenses": [],
+   "language": "go",
+   "cpes": [
+    "cpe:2.3:a:golang:x\\/sys:v0.0.0-20200501145240-bc7a7d42d5c3:*:*:*:*:*:*:*"
+   ],
+   "purl": "pkg:golang/golang.org/x/sys@v0.0.0-20200501145240-bc7a7d42d5c3"
+  }
+ ],
+ "artifactRelationships": [],
+ "source": {
+  "type": "directory",
+  "target": "."
+ },
+ "distro": {},
+ "descriptor": {
+  "name": "syft",
+  "version": "[not provided]",
+  "configuration": {
+   "configPath": "",
+   "verbosity": 0,
+   "quiet": false,
+   "output": [
+    "json"
+   ],
+   "file": "",
+   "check-for-app-update": true,
+   "anchore": {
+    "host": "",
+    "path": "",
+    "dockerfile": "",
+    "overwrite-existing-image": false,
+    "import-timeout": 30
+   },
+   "dev": {
+    "profile-cpu": false,
+    "profile-mem": false
+   },
+   "log": {
+    "structured": false,
+    "level": "warning",
+    "file-location": ""
+   },
+   "package": {
+    "cataloger": {
+     "enabled": true,
+     "scope": "Squashed"
+    },
+    "search-unindexed-archives": false,
+    "search-indexed-archives": true
+   },
+   "file-metadata": {
+    "cataloger": {
+     "enabled": false,
+     "scope": "Squashed"
+    },
+    "digests": [
+     "sha256"
+    ]
+   },
+   "file-classification": {
+    "cataloger": {
+     "enabled": false,
+     "scope": "Squashed"
+    }
+   },
+   "file-contents": {
+    "cataloger": {
+     "enabled": false,
+     "scope": "Squashed"
+    },
+    "skip-files-above-size": 1048576,
+    "globs": []
+   },
+   "secrets": {
+    "cataloger": {
+     "enabled": false,
+     "scope": "AllLayers"
+    },
+    "additional-patterns": {},
+    "exclude-pattern-names": [],
+    "reveal-values": false,
+    "skip-files-above-size": 1048576
+   },
+   "registry": {
+    "insecure-skip-tls-verify": false,
+    "insecure-use-http": false,
+    "auth": []
+   },
+   "exclude": [],
+   "attest": {
+    "key": "",
+    "cert": "",
+    "noUpload": false,
+    "force": false,
+    "recursive": false,
+    "replace": false,
+    "fulcioUrl": "https://fulcio.sigstore.dev",
+    "fulcio_identity_token": "",
+    "insecure_skip_verify": false,
+    "rekorUrl": "https://rekor.sigstore.dev",
+    "oidcIssuer": "https://oauth2.sigstore.dev/auth",
+    "oidcClientId": "sigstore",
+    "OIDCRedirectURL": ""
+   },
+   "platform": ""
+  }
+ },
+ "schema": {
+  "version": "3.2.3",
+  "url": "https://raw.githubusercontent.com/anchore/syft/main/schema/json/schema-3.2.3.json"
+ }
+}
